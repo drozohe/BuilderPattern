@@ -12,5 +12,15 @@ int main(int argc, char* argv[]) {
     builder.addChild("li", "world");
     cout << builder.str() << endl;
 
+    // use fluent interface with a list of consoles and videogames
+    HtmlBuilder builder2{"ul"};
+    builder2
+        .addChild("li", "PlayStation 5")
+        .addChild("li", "Xbox Series X")
+        .addChild("li", "Nintendo Switch")
+        .addChild("li", "PC");
+    cout << builder2.str() << endl;
+
+
     return 0;
 }

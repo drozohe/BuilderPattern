@@ -12,7 +12,7 @@ class HtmlBuilder {
 public:
     HtmlElement root;
     HtmlBuilder(std::string root_name);
-    void addChild(std::string child_name, std::string child_text);
+    HtmlBuilder& addChild(std::string child_name, std::string child_text);
     std::string str() const;
 };
 #endif

@@ -4,10 +4,11 @@ HtmlBuilder::HtmlBuilder(std::string root_name)
 {
     root.name = root_name;
 }
-void HtmlBuilder::addChild(std::string child_name, std::string child_text)
+HtmlBuilder& HtmlBuilder::addChild(std::string child_name, std::string child_text)
 {
     HtmlElement e{child_name, child_text};
     root.elements.emplace_back(e);
+    return *this;
 }
 std::string HtmlBuilder::str() const
 {
