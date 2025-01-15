@@ -9,13 +9,19 @@
 #include "HtmlElement.h"
 
 class HtmlBuilder {
-public:
     HtmlElement root;
+public:
+    HtmlElement& getRoot();
     HtmlBuilder(std::string root_name);
     HtmlBuilder& addChild(std::string child_name, std::string child_text);
     std::string str() const;
-};
-#endif
-
     
+    HtmlBuilder(HtmlBuilder&& other) noexcept;
+    HtmlBuilder& operator=(HtmlBuilder&& other) noexcept;
+
+    HtmlBuilder(const HtmlBuilder& other) = delete;
+    HtmlBuilder& operator=(const HtmlBuilder& other) = delete;
+
+};
+#endif // HTML_BUILDER_H    
     
